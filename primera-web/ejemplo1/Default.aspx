@@ -38,6 +38,28 @@
                     <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
                 </p>
             </section>
+
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active ratio ratio-16x9">
+                  <img src="https://i0.wp.com/vacacionesporargentina.com/wp-content/uploads/2020/11/waterfall-5040210_1920.jpg?fit=1920%2C1272&ssl=1" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item ratio ratio-16x9">
+                  <img src="https://www.clarin.com/2022/02/18/A8PHLMvr9_2000x1500__1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item ratio ratio-16x9">
+                  <img src="https://media.airedesantafe.com.ar/p/5410b92bd0db84f3c61e91f0f6fadbc3/adjuntos/268/imagenes/003/470/0003470122/10-fotografias-los-mejores-paisajes-argentina.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
         </div>
     </main>
 
