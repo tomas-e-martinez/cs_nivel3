@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Ajax.Utilities;
 
 namespace ejemplo1
 {
@@ -12,6 +13,13 @@ namespace ejemplo1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text;
+            if(!nombre.IsNullOrWhiteSpace())
+                lblSaludo.Text = $"Hola {nombre}!";
         }
     }
 }
