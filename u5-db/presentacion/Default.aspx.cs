@@ -16,6 +16,9 @@ namespace presentacion
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulo = negocio.listarSP();
+
+            repRepetidor.DataSource = ListaArticulo;
+            repRepetidor.DataBind();
         }
     }
 }
