@@ -18,8 +18,10 @@ namespace ejemplo1
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
-            if(!nombre.IsNullOrWhiteSpace())
+            if (!nombre.IsNullOrWhiteSpace())
                 lblSaludo.Text = $"Hola {nombre}!";
+            else
+                lblSaludo.Text = $"Hola papanatas";
         }
     }
 }
