@@ -9,7 +9,7 @@
             <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
         </section>
 
-        <div class="row">
+        <%--<div class="row">
             <asp:GridView ID="dgvArticulos" DataKeyNames="Id" runat="server" CssClass="table" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField HeaderText="Código" DataField="Codigo" />
@@ -20,7 +20,35 @@
                 </Columns>
 
             </asp:GridView>
+        </div>--%>
+
+        <style>
+            .card-img-top {
+                width: 100%;
+                height: 200px;
+                object-fit: contain;
+            }
+        </style>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <%
+                foreach (dominio.Articulo art in ListaArticulo)
+                {
+            %>
+            <div class="col">
+                <div class="card">
+                    <img src="<%:art.ImagenUrl %>" class="card-img-top" alt="..." onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9cSGzVkaZvJD5722MU5A-JJt_T5JMZzotcw&s'">
+                    <div class="card-body">
+                        <h5 class="card-title"><%:art.Nombre %></h5>
+                        <p class="card-text"><%:art.Descripcion %></p>
+                        <a href="DetalleArticulo.aspx&id=<%:art.Id %>">Ver Detalle</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
         </div>
+
     </main>
 
 </asp:Content>
