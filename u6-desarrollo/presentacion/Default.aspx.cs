@@ -16,6 +16,7 @@ namespace presentacion
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulo = negocio.listarSP();
+            Session.Add("listaArticulos", ListaArticulo);
 
             repRepetidor.DataSource = ListaArticulo;
             repRepetidor.DataBind();

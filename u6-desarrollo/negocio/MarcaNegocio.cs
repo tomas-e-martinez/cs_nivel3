@@ -17,7 +17,7 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("Select Id, Descripcion From MARCAS");
+                datos.setearProcedimiento("storedListarMarcas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())

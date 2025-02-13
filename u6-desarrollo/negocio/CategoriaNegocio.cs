@@ -16,7 +16,7 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("Select Id, Descripcion From CATEGORIAS");
+                datos.setearProcedimiento("storedListarCategorias");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
