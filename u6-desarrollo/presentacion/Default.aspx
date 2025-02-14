@@ -52,6 +52,13 @@
             }
         </style>
 
+        <div class="row">
+            <div class="mb-3">
+                <a href="ArticuloForm.aspx" class="btn btn-primary">Agregar</a
+            </div>
+        </div>
+        <hr />
+
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
             <asp:Repeater ID="repRepetidor" runat="server">
@@ -62,6 +69,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text"><%#Eval("Descripcion") %></p>
+                                <p class="card-text">$<%#Eval("Precio") %></p>
                                 <a href="ArticuloForm.aspx?id=<%#Eval("Id") %>" class="btn btn-primary">Ver Detalle</a>
                             </div>
                         </div>

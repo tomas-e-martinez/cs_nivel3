@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
@@ -11,14 +12,14 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
-        public void eliminar(Articulo eliminar)
+        public void eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearQuery("delete ARTICULOS where Id = @id");
-                datos.setearParametro("@id", eliminar.Id);
+                datos.setearProcedimiento("storedEliminarArticulo");
+                datos.setearParametro("@id", id);
 
                 datos.ejecutarAccion();
             }
@@ -38,10 +39,10 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @imagenUrl, @precio)");
+                datos.setearProcedimiento("storedAltaArticulo");
                 datos.setearParametro("@codigo", nuevo.Codigo);
                 datos.setearParametro("@nombre", nuevo.Nombre);
-                datos.setearParametro("@descripcion", nuevo.Descripcion);
+                datos.setearParametro("@desc", nuevo.Descripcion);
                 datos.setearParametro("@idMarca", nuevo.Marca.Id);
                 datos.setearParametro("@idCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@imagenUrl", nuevo.ImagenUrl);
@@ -65,10 +66,10 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, ImagenUrl = @imagenUrl, Precio = @precio where Id = @id");
+                datos.setearProcedimiento("storedModificarArticulo");
                 datos.setearParametro("@codigo", modificar.Codigo);
                 datos.setearParametro("@nombre", modificar.Nombre);
-                datos.setearParametro("@descripcion", modificar.Descripcion);
+                datos.setearParametro("@desc", modificar.Descripcion);
                 datos.setearParametro("@idMarca", modificar.Marca.Id);
                 datos.setearParametro("@idCategoria", modificar.Categoria.Id);
                 datos.setearParametro("@imagenUrl", modificar.ImagenUrl);
