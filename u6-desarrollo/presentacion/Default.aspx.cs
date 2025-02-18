@@ -21,5 +21,12 @@ namespace presentacion
             repRepetidor.DataSource = ListaArticulo;
             repRepetidor.DataBind();
         }
+
+        protected void filtro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada = ListaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            repRepetidor.DataSource= listaFiltrada;
+            repRepetidor.DataBind();
+        }
     }
 }

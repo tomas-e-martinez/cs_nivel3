@@ -54,6 +54,10 @@
 
         <div class="row">
             <div class="mb-3">
+                <asp:Label Text="Filtro" runat="server" for="txtFiltro" CssClass="form-label" />
+                <asp:TextBox runat="server" ID="txtFiltro" AutoPostBack="true" OnTextChanged="filtro_TextChanged" CssClass="form-control" />
+            </div>
+            <div class="mb-3">
                 <a href="ArticuloForm.aspx" class="btn btn-primary">Agregar</a
             </div>
         </div>
