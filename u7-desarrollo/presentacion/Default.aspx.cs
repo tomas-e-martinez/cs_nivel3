@@ -35,7 +35,7 @@ namespace presentacion
         protected void filtro_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada = ListaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()));
-            repRepetidor.DataSource= listaFiltrada;
+            repRepetidor.DataSource = listaFiltrada;
             repRepetidor.DataBind();
         }
 
@@ -48,7 +48,7 @@ namespace presentacion
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             ddlCriterio.Items.Clear();
-            if(ddlCampo.SelectedItem.ToString() == "Precio")
+            if (ddlCampo.SelectedItem.ToString() == "Precio")
             {
                 ddlCriterio.Items.Add("Igual a");
                 ddlCriterio.Items.Add("Mayor a");
