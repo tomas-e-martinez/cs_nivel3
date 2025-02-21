@@ -38,5 +38,31 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public int insertarNuevo(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("SP_INSERTAR_USUARIO");
+                datos.setearParametro("@user", nuevo.User);
+                datos.setearParametro("@pass", nuevo.Pass);
+                return datos.ejecutarAccionScalar();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+
+        }
     }
 }
