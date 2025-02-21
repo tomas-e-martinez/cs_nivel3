@@ -49,6 +49,17 @@
             }
         </style>
 
+        <%if (Session["usuario"] != null) { %>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h2>Bienvenido/a <% Response.Write(((dominio.Usuario)Session["usuario"]).User.ToString()); %></h2>
+                </div>
+                <div class="col-6">
+                    <asp:Button Text="Cerrar Sesión" runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-outline-primary"/>
+                </div>
+            </div>
+        <% } %>
+
         <div class="row">
             <div class="col-6">
                 <div class="mb-3">
@@ -113,7 +124,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text"><%#Eval("Descripcion") %></p>
-                                <p class="card-text">$<%#Eval("Precio") %></p>
+                                <p class="card-text">$<%#Eval("Precio", "{0:F2}") %></p>
                                 <a href="ArticuloForm.aspx?id=<%#Eval("Id") %>" class="btn btn-primary">Ver Detalle</a>
                             </div>
                         </div>

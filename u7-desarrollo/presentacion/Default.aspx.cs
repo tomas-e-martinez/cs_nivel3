@@ -81,5 +81,10 @@ namespace presentacion
                 throw;
             }
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("usuario");
+        }
     }
 }
