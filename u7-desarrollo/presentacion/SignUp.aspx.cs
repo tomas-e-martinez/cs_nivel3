@@ -25,6 +25,8 @@ namespace presentacion
                 usuario.User = txtUser.Text;
                 usuario.Pass = txtPass.Text;
                 int id = negocio.insertarNuevo(usuario);
+                Session.Add("usuario", usuario);
+                Response.Redirect("Default.aspx", false);
 
             }
             catch (Exception ex)
