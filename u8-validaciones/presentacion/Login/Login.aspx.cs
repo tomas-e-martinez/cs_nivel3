@@ -13,7 +13,7 @@ namespace presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["usuario"] != null)
+            if (Session["usuario"] != null)
             {
                 Session.Add("error", "ya estas logueado");
                 Response.Redirect("../Error.aspx", false);
@@ -44,7 +44,7 @@ namespace presentacion
             catch (Exception ex)
             {
 
-                Session.Add("error", ex.ToString());
+                Session.Add("error", ex.Message);
                 Response.Redirect("../Error.aspx");
             }
         }
