@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-12 mb-3">
             <asp:Label Text="Usuario" runat="server" for="txtUser" CssClass="form-label" />
-            <asp:TextBox runat="server" ID="txtUser" CssClass="form-control" />
+            <asp:TextBox runat="server" ID="txtUser" CssClass="form-control" REQUIRED />
         </div>
         <div class="col-12 mb-3">
             <asp:Label Text="Contraseña" runat="server" for="txtUser" CssClass="form-label" />
-            <asp:TextBox runat="server" ID="txtPass" CssClass="form-control" TextMode="Password" />
+            <asp:TextBox runat="server" ID="txtPass" CssClass="form-control" TextMode="Password" REQUIRED />
         </div>
     </div>
     <div class="row">

@@ -20,6 +20,12 @@ namespace presentacion
         {
             try
             {
+                if(txtUser.Text == "" || txtPass.Text == "")
+                {
+                    Session.Add("error", "usuario o pass vacio");
+                    Response.Redirect("../Error.aspx", false);
+                }
+
                 Usuario usuario = new Usuario();
                 UsuarioNegocio negocio = new UsuarioNegocio();
                 usuario.User = txtUser.Text;
